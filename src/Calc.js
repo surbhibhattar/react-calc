@@ -47,7 +47,7 @@ class Calc extends React.Component {
     return (
       <div style={{ width: "100%" }}>
         <h1>React Basic Calculator</h1>
-        <Container className="calc">
+        <Container className="calc" style={{ width: "500px" }}>
           <Row className="first">
             <Col>{this.state.answer}</Col>
           </Row>
