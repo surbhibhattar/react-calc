@@ -1,5 +1,6 @@
 import React from "react";
 import { evaluate } from "./Infix_Eval.js";
+import { Container, Row, Col } from "react-bootstrap";
 
 import "./Calc.css";
 class Calc extends React.Component {
@@ -44,70 +45,79 @@ class Calc extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <div className="first">{this.state.answer}</div>
-        <div className="second">
-          <div className="clear">
+      <Container className="calc">
+        <Row className="first">
+          <Col>{this.state.answer}</Col>
+        </Row>
+        <Row className="second">
+          <Col xs={6}>
             <button onClick={this.clearScreen}>clear</button>
-          </div>
-          <div className="equalto">
-            <button onClick={this.computeResult}>=</button>
-          </div>
-          <div className="plus">
-            <button onClick={this.operator("+")}>+</button>
-          </div>
-        </div>
-        <div className="third">
-          <div className="seven">
+          </Col>
+          <Col>
+            <button onClick={this.computeResult} className="equalto">
+              =
+            </button>
+          </Col>
+          <Col>
+            <button onClick={this.operator("+")} className="plus">
+              +
+            </button>
+          </Col>
+        </Row>
+        <Row className="third">
+          <Col>
             <button onClick={this.operator("7")}>7</button>
-          </div>
-          <div className="eight">
+          </Col>
+          <Col>
             <button onClick={this.operator("8")}>8</button>
-          </div>
-          <div className="nine">
+          </Col>
+          <Col>
             <button onClick={this.operator("9")}>9</button>
-          </div>
-          <div className="minus">
-            <button onClick={this.operator("-")}>-</button>
-          </div>
-        </div>
-        <div className="fourth">
-          <div className="four">
+          </Col>
+          <Col>
+            <button onClick={this.operator("-")} className="minus">
+              -
+            </button>
+          </Col>
+        </Row>
+        <Row className="fourth">
+          <Col>
             <button onClick={this.operator("4")}>4</button>
-          </div>
-          <div className="five">
+          </Col>
+          <Col>
             <button onClick={this.operator("5")}>5</button>
-          </div>
-          <div className="six">
+          </Col>
+          <Col>
             <button onClick={this.operator("6")}>6</button>
-          </div>
-          <div className="multiply">
-            <button onClick={this.operator("*")}>x</button>
-          </div>
-        </div>
-        <div className="fifth">
-          <div className="one">
+          </Col>
+          <Col>
+            <button onClick={this.operator("*")} className="multiply">
+              x
+            </button>
+          </Col>
+        </Row>
+        <Row className="fifth">
+          <Col>
             <button onClick={this.operator("1")}>1</button>
-          </div>
-          <div className="two">
+          </Col>
+          <Col>
             <button onClick={this.operator("2")}>2</button>
-          </div>
-          <div className="three">
+          </Col>
+          <Col>
             <button onClick={this.operator("3")}>3</button>
-          </div>
-          <div className="divide">
-            <button onClick={this.operator("/")}>/</button>
-          </div>
-        </div>
-        <div className="sixth">
-          <div className="zero">
+          </Col>
+          <Col>
+            <button onClick={this.operator("/")} className="divide">
+              /
+            </button>
+          </Col>
+        </Row>
+        <Row className="sixth">
+          <Col>
             <button onClick={this.operator("0")}>0</button>
-          </div>
-          {/* <div className="parentheses">
-          <button onClick={this.operator("(")}>/</button>
-          </div> */}
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
